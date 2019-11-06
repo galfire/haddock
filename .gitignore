@@ -19,8 +19,8 @@
 
 # Ignore
 */*.js.meta
-video/node_modules/
-video/build/
+content/node_modules/
+content/build/
 
 .byebug_history
 
