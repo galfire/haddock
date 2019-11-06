@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>Hello360</title>
+  <style>body { margin: 0; }</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body>
+<!-- Attachment point for your app -->
+<div id="container"></div>
+
+<% if Rails.env.development? %>
+  <script src="http://localhost:8081/client.bundle?platform=vr"></script>
+<% else %>
+  <script src="/public/client.bundle"></script>
+<% end %>
+<script>
+    // Initialize the React 360 application
+    React360.init(
+        'http://localhost:8081/index.bundle?platform=vr',
+        document.getElementById('container'),
+        {
+            assetRoot: 'static_assets/',
+        }
+    );
+</script>
+</body>
+</html>
