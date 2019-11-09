@@ -24,6 +24,8 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 
+  config.action_controller.asset_host = 'http://localhost:8081'
+
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
@@ -36,5 +38,7 @@ Rails.application.configure do
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
 
-  config.action_controller.asset_host = 'http://localhost:8081'
+  config.cdn = ActiveSupport::OrderedOptions.new
+  config.cdn.host_url = config.action_controller.asset_host
+  config.cdn.environment = ENV['CDN_ENVIRONMENT']
 end

@@ -17,6 +17,9 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore test output files
+/coverage
+
 # Ignore
 */*.js.meta
 content/node_modules/

@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
   <title>Hello360</title>
   <style>body { margin: 0; }</style>
@@ -8,15 +8,11 @@
 <!-- Attachment point for your app -->
 <div id="container"></div>
 
-<% if Rails.env.development? %>
-  <script src="<%= asset_url '/client.bundle?platform=vr' %>"></script>
-<% else %>
-  <script src="<%= asset_url '/client.bundle' %>"></script>
-<% end %>
+<script src="<%= asset_url 'client.bundle?platform=vr' %>"></script>
 <script>
     // Initialize the React 360 application
     React360.init(
-        'http://localhost:8081/index.bundle?platform=vr',
+        "<%= asset_url 'index.bundle?platform=vr' %>",
         document.getElementById('container'),
         {
             assetRoot: 'static_assets/',
