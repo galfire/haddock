@@ -40,5 +40,5 @@ Rails.application.configure do
 
   config.cdn = ActiveSupport::OrderedOptions.new
   config.cdn.host_url = config.action_controller.asset_host
-  config.cdn.environment = ENV['CDN_ENVIRONMENT']
+  config.cdn.environment = 'development'
 end
