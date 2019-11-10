@@ -1,5 +1,5 @@
 release:
   command: |
-    deployment/release.sh
+    bash deployment/release.sh
 run:
   web: bundle exec puma -C config/puma.rb
