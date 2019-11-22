@@ -6,15 +6,12 @@
 </head>
 <body>
 <div id="container"></div>
-<script src="<%= asset_url 'client.bundle?platform=vr' %>"></script>
+<script src="<%= asset_url 'client.bundle.js' %>"></script>
 <script>
     // Initialize the React 360 application
     React360.init(
-        "<%= asset_url 'index.bundle?platform=vr' %>",
-        document.getElementById('container'),
-        {
-            assetRoot: 'static_assets/',
-        }
+        "<%= asset_url('index.bundle.js') %>",
+        document.getElementById('container')
     );
 </script>
 </body>
