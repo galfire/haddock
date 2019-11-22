@@ -24,6 +24,7 @@
 */*.js.meta
 content/node_modules/
 content/build/
+*.local
 
 .byebug_history
 
